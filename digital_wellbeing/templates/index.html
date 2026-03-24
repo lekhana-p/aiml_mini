@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Wellbeing Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    <div class="container">
+        <h1>AI-Based Digital Wellbeing &amp; Screen Addiction Detection System</h1>
+        <p class="subtitle">Enter your phone usage pattern to estimate addiction risk.</p>
+
+        <div class="card">
+            <h2>Usage Input Form</h2>
+            <form action="{{ url_for('predict') }}" method="post">
+                <label for="daily_screen_time">Daily Screen Time (hours)</label>
+                <input type="number" step="0.1" min="0" max="24" id="daily_screen_time" name="daily_screen_time" required />
+
+                <label for="phone_unlocks">Phone Unlocks (count/day)</label>
+                <input type="number" min="0" id="phone_unlocks" name="phone_unlocks" required />
+
+                <label for="social_media_usage">Social Media Usage (hours/day)</label>
+                <input type="number" step="0.1" min="0" max="24" id="social_media_usage" name="social_media_usage" required />
+
+                <label for="night_usage">Night Usage (hours/day)</label>
+                <input type="number" step="0.1" min="0" max="12" id="night_usage" name="night_usage" required />
+
+                <label for="avg_session_length">Average Session Length (minutes)</label>
+                <input type="number" step="0.1" min="0" id="avg_session_length" name="avg_session_length" required />
+
+                <button type="submit">Predict Risk</button>
+            </form>
+        </div>
+
+        <div class="card analytics">
+            <h2>Basic Analytics (from submitted data)</h2>
+            <ul>
+                <li><strong>Total Entries:</strong> {{ stats.total_entries }}</li>
+                <li><strong>Average Screen Time:</strong> {{ stats.avg_screen_time }} hrs/day</li>
+                <li><strong>Average Unlocks:</strong> {{ stats.avg_unlocks }} /day</li>
+                <li><strong>Average Social Media Usage:</strong> {{ stats.avg_social_media }} hrs/day</li>
+                <li><strong>Average Night Usage:</strong> {{ stats.avg_night_usage }} hrs/day</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

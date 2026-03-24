@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    <div class="container">
+        <div class="card result-card">
+            <h1>Prediction Result</h1>
+            <p class="risk-label">Predicted Addiction Risk:</p>
+            <h2 class="risk-value">{{ risk }}</h2>
+            <a class="back-link" href="{{ url_for('index') }}">← Go Back to Dashboard</a>
+        </div>
+
+        <div class="card analytics">
+            <h3>Updated Analytics</h3>
+            <ul>
+                <li><strong>Total Entries:</strong> {{ stats.total_entries }}</li>
+                <li><strong>Average Screen Time:</strong> {{ stats.avg_screen_time }} hrs/day</li>
+                <li><strong>Average Unlocks:</strong> {{ stats.avg_unlocks }} /day</li>
+                <li><strong>Average Social Media Usage:</strong> {{ stats.avg_social_media }} hrs/day</li>
+                <li><strong>Average Night Usage:</strong> {{ stats.avg_night_usage }} hrs/day</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
