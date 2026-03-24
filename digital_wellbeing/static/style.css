@@ -1,0 +1,87 @@
+:root {
+    --primary: #2e86de;
+    --bg: #f4f7fb;
+    --card-bg: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+}
+
+.subtitle {
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    padding: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+label {
+    display: block;
+    margin-top: 0.8rem;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+button {
+    margin-top: 1rem;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem 1.2rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.analytics ul {
+    padding-left: 1.2rem;
+}
+
+.risk-label {
+    font-size: 1.1rem;
+    color: var(--muted);
+}
+
+.risk-value {
+    color: var(--primary);
+    font-size: 2rem;
+}
+
+.back-link {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 600;
+}
